@@ -1,0 +1,51 @@
+<%- include('partials/header') %>
+
+<main>
+  <section class="catalogue">
+    <div class="catalogue_content">
+      <h2 class="catalogue_title">Bienvenue !</h2>
+      <p class="catalogue_para">
+        Nous sommes Jean et Jacques Pepper, deux frères passionnés par l'univers
+        du café, et nous avons créé oCoffee : notre boutique de café haut de
+        gamme, située dans la ville de Hauts-de-Cloques.
+      </p>
+
+      <a class="catalogue_button" href="/catalogue">
+        <button>Voir le catalogue</button>
+      </a>
+    </div>
+
+    <div class="catalogue_img-container">
+      <img src="../images/about.jpg" alt="coffee" class="catalogue_img" />
+    </div>
+  </section>
+
+  <section class="article_container">
+    <div class="article_container-title">
+      <h2>Nouveautés</h2>
+    </div>
+
+    <div class="article_article">
+      <% coffees.forEach(coffee => { %>
+
+      <article class="article">
+        <img
+          src="../images/coffees/<%= coffee.reference %>.png"
+          alt=""
+          class="img--article"
+        />
+
+        <h3><%= coffee.name %></h3>
+
+        <p class="article_para"><%= coffee.description %></p>
+
+        <a class="catalogue_button" href="/article/<%= coffee.id %>">
+          <button>Découvrir</button>
+        </a>
+      </article>
+      <% }) %>
+    </div>
+  </section>
+</main>
+
+<%- include('partials/footer') %>

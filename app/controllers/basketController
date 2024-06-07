@@ -1,0 +1,38 @@
+const dataMapper = require("../dataMapper.js");
+
+const basketController = {
+  getCoffeeBasket: async (request, response) => {
+    const coffee = parseInt(request.params.id);
+
+    if (!request.session.boutique) {
+      request.session.boutique = [];
+    }
+
+    const isInBasket = request.session.boutique.some(
+      (basketCreation) => basketCreation.id === coffee
+    );
+
+    if (!isInBasket) {
+      const addCoffee = await dataMapper.getOneCoffee(coffee);
+
+      request.session.boutique.push(addCoffee);
+
+      request.session.save();
+
+      response.redirect(`/boutique`);
+    }
+  },
+
+  removeCoffeeBasket(request, response) {
+    const coffeeIdToRemove = parseInt(request.params.id);
+
+    if (request.session.boutique) {
+      request.session.boutique = request.session.boutique.filter(
+        (caf) => caf.id !== coffeeIdToRemove
+      );
+    }
+    response.redirect("/boutique");
+  },
+};
+
+module.exports = basketController;

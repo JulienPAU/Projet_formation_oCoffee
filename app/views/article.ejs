@@ -1,0 +1,54 @@
+<%- include('partials/header') %> 
+
+
+<main>
+  
+    <div class="article_article-onlyone">
+  
+      <div class="onlyone_img--article">
+        <img
+        src="../images/coffees/<%- coffees.reference %>.png"
+        alt=""
+        class="onlyone_img--article"
+      />
+      </div>
+      <adiv class=" article_onlyone">
+        <div class="date_display">
+           <time class="date" datetime="2022-07-19"
+                > <span>Publié :</span> le 19 juillet 2022</time>
+        </div>
+       
+  
+        <h3><span>Café :</span> <%= coffees.name %> </h3>
+  
+        
+              
+  
+        <div class="article_para-description">
+          <p><span>Description :</span> <%= coffees.description %> </p>
+          <p><span>Référence :</span> <%= coffees.reference %></p>
+          <p><span>Origine :</span> <%= coffees.origin %></p>
+          <p><span>Prix au kilo :</span> <%= coffees.price_kg %> €</p>
+          <p><span>Caractéristique principale :</span> <%= coffees.category_name %> </p>
+          <p><span>Disponible :</span> <% if (coffees.available) { %> oui
+            <% } %>
+            <% if (!coffees.available) { %> non
+             
+            <% } %></p>
+  
+        
+        </div>
+        <div class="button_container">
+        <a class="catalogue_button" href="/catalogueAll">
+          <button>Catalogue</button>
+        </a>
+        <a class="basket_link" href="/boutique/add/<%= coffees.id %>">
+          <button class="basket_button">+</button>
+        </a>
+      </div>
+      </div>
+  
+  
+  </main>
+
+<%- include('partials/footer') %>

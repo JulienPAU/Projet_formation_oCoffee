@@ -1,0 +1,16 @@
+const dataMapper = require("../dataMapper");
+
+const catalogueController = {
+  articlePage: async (request, response) => {
+    try {
+      const coffeeId = parseInt(request.params.id);
+      const coffees = await dataMapper.getOneCoffeeWithCategory(coffeeId);
+      response.render("article", { coffees });
+    } catch (error) {
+      console.error(error);
+      response.status(500).render("500");
+    }
+  },
+};
+
+module.exports = catalogueController;

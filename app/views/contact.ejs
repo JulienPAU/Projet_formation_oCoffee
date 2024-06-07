@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+
+<main class="contact">
+  <div class="contact_title"><h4>Contactez nous</h4></div>
+
+  <div class="container">
+    <form action="/contact" method="post">
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="pseudo" placeholder="Your name.." />
+
+      <label for="lname">Last Name</label>
+      <input
+        type="text"
+        id="lname"
+        name="pseudo"
+        placeholder="Your last name.."
+      />
+
+      <label for="country">Country</label>
+      <select id="country" name="country">
+        <!-- <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option> -->
+      </select>
+
+      <label for="subject">Subject</label>
+      <textarea
+        id="subject"
+        name="pseudo"
+        placeholder="Write something.."
+        style="height: 200px"
+      ></textarea>
+
+      <a href="/contact"><input type="submit" value="Submit" /></a>
+    </form>
+  </div>
+
+  <section class="map">
+    <h4>Où nous trouver</h4>
+    <a href="https://www.google.fr/maps?q=Colmar" target="_blank"
+      ><img src="../images/coffees/google-maps.webp" alt="map"
+    /></a>
+  </section>
+</main>
+
+<%- include('partials/footer') %>

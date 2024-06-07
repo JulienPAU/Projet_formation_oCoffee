@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../CSS/reset.css" />
+    <link rel="stylesheet" href="../CSS/style.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo_title">
+          <img src="../images/logo.svg" alt="Logo" class="navbar_img" />
+
+          <h1 class="title_logo">O'Coffee</h1>
+        </div>
+        <i class="fa-solid fa-bars icon"></i>
+        <ul class="navbar_list hidden_nav hidden">
+          <a href="index.html">
+            <li>Accueil</li>
+          </a>
+          <a href="catalogue.html">
+            <li>Catalogue</li>
+          </a>
+          <a href="">
+            <li>Boutique</li>
+          </a>
+          <a href="">
+            <li>Contact</li>
+          </a>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="contact">
+      <div class="contact_title"><h4>Contactez nous</h4></div>
+
+      <div class="container">
+        <form action="/action_page.php">
+          <label for="fname">First Name</label>
+          <input
+            type="text"
+            id="fname"
+            name="firstname"
+            placeholder="Your name.."
+          />
+
+          <label for="lname">Last Name</label>
+          <input
+            type="text"
+            id="lname"
+            name="lastname"
+            placeholder="Your last name.."
+          />
+
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <!-- <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option> -->
+          </select>
+
+          <label for="subject">Subject</label>
+          <textarea
+            id="subject"
+            name="subject"
+            placeholder="Write something.."
+            style="height: 200px"
+          ></textarea>
+
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+
+      <section class="map">
+        <h4>Où nous trouver</h4>
+        <img src="../images/coffees/google-maps.webp" alt="map" />
+      </section>
+    </main>
+
+    <footer>
+      <div class="logo_title">
+        <img src="../images/logo.svg" alt="Logo" class="navbar_img" />
+        <div></div>
+        <h1 class="title_logo">O'Coffee</h1>
+      </div>
+
+      <ul class="navbar_list">
+        <a href="">
+          <li>Copyright Julien Paulus O'Coffee 2024</li>
+        </a>
+        <a href="about.html">
+          <li>A propos</li>
+        </a>
+        <a href="contact.html">
+          <li>Contact</li>
+        </a>
+      </ul>
+    </footer>
+  </body>
+  <script src="index.js"></script>
+  <script
+    src="https://kit.fontawesome.com/2018e2ad13.js"
+    crossorigin="anonymous"
+  ></script>
+</html>

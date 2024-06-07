@@ -1,0 +1,63 @@
+<%- include('partials/header') %>
+
+<main>
+  <section class="catalogue_catalogue-page">
+    <figure class="catalogue_page_figure">
+      <img
+        class="catalogue_page-img"
+        src="../images/header.jpg"
+        alt="image catalogue café moulu"
+      />
+      <figcaption class="catalogue_page-title">Notre catalogue</figcaption>
+    </figure>
+
+    <div class="coffee_div">
+      <select
+        name="Coffee"
+        id="Coffee-select"
+        class="coffee_select"
+        onchange="window.location.href = this.value"
+      >
+        <option value="">Catégories</option>
+        <% allCategory.forEach(category => { %>
+        <option value="/category/<%= category.id %>">
+          <%= category.name %>
+        </option>
+        <% }) %>
+      </select>
+    </div>
+  </section>
+
+  <section class="article_article">
+    <% oneCategory.forEach(coffee => { %>
+
+    <article class="article">
+      <img
+        src="../images/coffees/<%= coffee.reference %>.png"
+        alt=""
+        s
+        class="img--article"
+      />
+      <h3><%= coffee.name %></h3>
+
+      <p class="article_para"><%= coffee.description %></p>
+
+      <div class="button_container">
+        <a class="catalogue_button" href="/article/<%= coffee.id %>">
+          <button>Découvrir</button>
+        </a>
+        <a class="basket_link" href="/boutique/add/<%= coffee.id %>">
+          <button class="basket_button">+</button>
+        </a>
+      </div>
+    </article>
+    <% }) %>
+  </section>
+  <div class="see_all">
+    <a class="catalogue_button" href="/catalogueAll">
+      <button>Catalogue</button>
+    </a>
+  </div>
+</main>
+
+<%- include('partials/footer') %>
