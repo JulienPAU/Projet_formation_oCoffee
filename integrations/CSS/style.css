@@ -10,6 +10,21 @@ body {
   justify-content: space-between;
   margin: 0 auto;
   transition: background-color 500ms linear;
+  background: linear-gradient(
+    to right bottom,
+    #f7dbb9,
+    #d2b493,
+    #ae8e6f,
+    #8b6a4e,
+    #69482e,
+    #69482e,
+    #69482e,
+    #69482e,
+    #8b6a4e,
+    #ae8e6f,
+    #d2b493,
+    #f7dbb9
+  );
 }
 
 h1,
@@ -28,7 +43,21 @@ ul {
 }
 
 .dark-mode {
-  background-color: rgb(15, 14, 14);
+  background-image: linear-gradient(
+    to right bottom,
+    #000000,
+    #140709,
+    #200d0d,
+    #2a120d,
+    #34160b,
+    #34160b,
+    #34160b,
+    #34160b,
+    #2a120d,
+    #200d0d,
+    #140709,
+    #000000
+  );
   color: #f7dbb9;
   transition: background-color 500ms linear;
 }
@@ -228,7 +257,7 @@ article {
   height: 30%;
   max-height: 30%;
 
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
 }
 
 article:hover {
@@ -265,12 +294,12 @@ article h3 {
 }
 .catalogue_page-img {
   width: 80%;
-  opacity: 0.6;
+  opacity: 0.3;
 }
 
 .catalogue_page-title {
   font-size: 60px;
-  font-weight: 500;
+  font-weight: 600;
   position: absolute;
   top: 50%;
   left: 50%;
