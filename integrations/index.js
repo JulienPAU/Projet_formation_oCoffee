@@ -15,12 +15,14 @@ menu.addEventListener("click", (event) => {
 
 const darkModeToggle = document.querySelector(".fa-toggle-on");
 const bodyContainer = document.querySelector(".body_container");
+const mainContainer = document.querySelector(".main_container");
 
 // Vérifier la préférence du mode sombre au chargement de la page
 window.onload = function () {
   if (localStorage.getItem("darkMode") === "true") {
     enableDarkMode();
     bodyContainer.classList.add("transition-done");
+    mainContainer.classList.add("transition-done");
   }
 };
 
@@ -28,11 +30,13 @@ window.onload = function () {
 function enableDarkMode() {
   // Ajouter la classe CSS pour le mode sombre au conteneur du corps de la page
   bodyContainer.classList.add("dark-mode");
+  mainContainer.classList.add("dark-mode");
   // Enregistrer la préférence du mode sombre dans le Local Storage
   localStorage.setItem("darkMode", "true");
   // Ajouter la classe "transition-done" après la fin de la transition
   setTimeout(() => {
     bodyContainer.classList.add("transition-done");
+    mainContainer.classList.add("transition-done");
   }, 1000);
 }
 
@@ -40,8 +44,10 @@ function enableDarkMode() {
 function disableDarkMode() {
   // Supprimer la classe CSS pour le mode sombre du conteneur du corps de la page
   bodyContainer.classList.remove("dark-mode");
+  mainContainer.classList.remove("dark-mode");
   // Supprimer la classe "transition-done" pour que la transition puisse se relancer
   bodyContainer.classList.remove("transition-done");
+  mainContainer.classList.remove("transition-done");
   // Enregistrer la préférence du mode clair dans le Local Storage
   localStorage.setItem("darkMode", "false");
 }

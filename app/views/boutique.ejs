@@ -1,47 +1,49 @@
 <%- include('partials/header') %>
 
-<main class="main_boutique">
-  <div class="basket_title-container">
-    <h3 class="basket_title">Votre panier</h3>
-  </div>
-  <section class="article_article">
-    <% coffee.forEach(cofe => { %>
-
-    <article class="article">
-      <img
-        src="/images/coffees/<%= cofe.reference %>.png"
-        alt=""
-        s
-        class="img--article"
-      />
-      <h3><%= cofe.name %></h3>
-
-      <p class="article_para"><%= cofe.description %></p>
-
-      <div class="button_container">
-        <a class="catalogue_button" href="/">
-          <button><%= cofe.price_kg %> €</button>
-        </a>
-        <a class="basket_link" href="/boutique/remove/<%= cofe.id %>">
-          <button class="basket_button">-</button>
-        </a>
-      </div>
-    </article>
-    <% }) %>
-  </section>
-  <div class="pay_button_container">
-    <a class="catalogue_button" href="/catalogueall">
-      <button>Retour au catalogue</button></a
-    >
-    <div class="basket_price-container">
-      <h3 class="basket_price">Total : <%= totalPrice %> €</h3>
+<main class="main_boutique main_container">
+  
+    <div class="basket_title-container">
+      <h3 class="basket_title">Votre panier</h3>
     </div>
+    <section class="article_article">
+      <% coffee.forEach(cofe => { %>
 
-    <a class="pay_button" href="/article/<%= coffee.id %>">
-      <button>Procéder au paiment</button></a
-    >
+      <article class="article">
+        <img
+          src="/images/coffees/<%= cofe.reference %>.png"
+          alt=""
+          s
+          class="img--article"
+        />
+        <h3><%= cofe.name %></h3>
+
+       
+
+        <div class="button_container">
+          <a class="catalogue_button" href="/">
+            <button><%= cofe.price_kg %> €</button>
+          </a>
+          <a class="basket_link" href="/boutique/remove/<%= cofe.id %>">
+            <button class="basket_button">-</button>
+          </a>
+        </div>
+      </article>
+      <% }) %>
+    </section>
+    <div class="pay_button_container">
+      <a class="catalogue_button" href="/catalogueall">
+        <button>Retour au catalogue</button></a
+      >
+      <div class="basket_price-container">
+        <h3 class="basket_price">Total : <%= totalPrice %> €</h3>
+      </div>
+
+      <a class="pay_button" href="/article/<%= coffee.id %>">
+        <button>Procéder au paiment</button></a
+      >
+    </div>
+    <div class="see_all"></div>
   </div>
-  <div class="see_all"></div>
 </main>
 
 <%- include('partials/footer') %>
