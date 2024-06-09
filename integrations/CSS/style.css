@@ -3,12 +3,32 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  height: 100%;
+
+  height: auto;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 0 auto;
+  color: white;
+  transition: background-color 500ms linear;
+  background: linear-gradient(
+    to right bottom,
+    #f7dbb9,
+    #d2b493,
+    #ae8e6f,
+    #8b6a4e,
+    #69482e,
+    #69482e,
+    #69482e,
+    #69482e,
+    #8b6a4e,
+    #ae8e6f,
+    #d2b493,
+    #f7dbb9
+  );
 }
+
 h1,
 h2,
 h3,
@@ -24,28 +44,8 @@ ul {
   padding-left: 0.5rem;
 }
 
-.main_container {
-  padding-bottom: 5rem;
-  background-image: linear-gradient(
-    to right bottom,
-    #f7dbb9,
-    #d2b493,
-    #ae8e6f,
-    #8b6a4e,
-    #69482e,
-    #69482e,
-    #69482e,
-    #69482e,
-    #8b6a4e,
-    #ae8e6f,
-    #d2b493,
-    #f7dbb9
-  );
-  transition: color 0.4s linear;
-}
-
 .dark-mode {
-  background: linear-gradient(
+  background-image: linear-gradient(
     to right bottom,
     #000000,
     #140709,
@@ -61,7 +61,7 @@ ul {
     #000000
   );
   color: #f7dbb9;
-  transition: color 0.4s linear;
+  transition: background-color 500ms linear;
 }
 
 .dark-mode.transition-done {
@@ -79,7 +79,7 @@ header {
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   position: sticky;
   top: 0;
-  z-index: 9999;
+  z-index: 999;
 }
 
 .title_logo_link {
@@ -133,6 +133,8 @@ header {
   font-size: 2rem;
   font-style: normal;
   color: #3e1e04;
+  text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 1em rgb(255, 255, 255),
+    0 0 0.2em rgb(255, 255, 255);
 }
 
 .catalogue {
@@ -178,15 +180,12 @@ header {
   border-radius: 1rem;
 }
 
-.catalogue_button {
-  margin: 0.5rem;
-}
-
 .button_container {
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 100%;
+  margin: 1rem;
 }
 
 .basket_button {
@@ -207,6 +206,7 @@ header {
 .catalogue_button button {
   align-items: center;
   padding: 1rem;
+  margin: 1rem;
   border-radius: 1rem;
   border: none;
 }
@@ -254,7 +254,7 @@ article {
   max-width: 25%;
   height: 30%;
   max-height: 30%;
-  padding: 1rem;
+
   box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
 }
 
@@ -297,11 +297,12 @@ article h3 {
 
 .catalogue_page-title {
   font-size: 60px;
-  font-weight: 500;
+  font-weight: 600;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: -999;
 }
 
 .coffee_div {
@@ -320,6 +321,7 @@ article h3 {
 .see_all {
   width: 90%;
   margin-top: 2rem;
+  margin-bottom: 1rem;
   text-align: right;
 }
 
@@ -328,6 +330,7 @@ article h3 {
 input[type="text"],
 select,
 textarea {
+  color: #000000;
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -353,7 +356,21 @@ input[type="submit"]:hover {
 
 .container {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: linear-gradient(
+    to right bottom,
+    #f7dbb9,
+    #d2b493,
+    #ae8e6f,
+    #8b6a4e,
+    #69482e,
+    #69482e,
+    #69482e,
+    #69482e,
+    #8b6a4e,
+    #ae8e6f,
+    #d2b493,
+    #f7dbb9
+  );
   padding: 20px;
   margin-top: 5rem;
 }
@@ -469,19 +486,10 @@ input[type="submit"]:hover {
 
 .main_boutique {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  padding: 0.5rem;
-}
-
-.main_boutique .article {
-  display: block;
-
-  max-width: 25%;
-
-  max-height: 25%;
-
-  box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
+  margin: 0 auto;
+  height: 1400px;
+  width: 100%;
+  overflow-wrap: scroll;
 }
 
 .basket_title-container {
@@ -508,6 +516,7 @@ input[type="submit"]:hover {
   text-align: center;
   padding: 1rem;
   border-radius: 1rem;
+  margin: 1rem;
   border: none;
   text-decoration: none;
 }
@@ -538,9 +547,10 @@ footer {
   background-image: linear-gradient(to right, rgba(255, 0, 0, 0), #3e1e04);
   box-shadow: rgba(0, 0, 0, 0.1) 5px 5px 5px 5px,
     rgba(0, 0, 0, 0.06) 5px 5px 5px 5px;
-
+  padding-top: 2rem;
   width: 100%;
   max-width: 100%;
+  margin-top: 2rem;
 }
 
 .footer_logo_link {
@@ -586,6 +596,8 @@ footer {
   font-style: normal;
   color: #3e1e04;
   padding-right: 2rem;
+  text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 1em rgb(255, 255, 255),
+    0 0 0.2em rgb(255, 255, 255);
 }
 
 /* footer ul li {
@@ -595,6 +607,11 @@ footer {
 @media only screen and (max-width: 600px) {
   body {
     margin: 0 auto;
+    width: 100%;
+  }
+
+  .main_boutique {
+    overflow-y: scroll;
     width: 100%;
   }
 
@@ -760,6 +777,11 @@ footer {
 @media only screen and (max-width: 1024px) and (min-width: 600px) {
   body {
     margin: 0 auto;
+  }
+
+  .main_boutique {
+    overflow-y: scroll;
+    width: 100%;
   }
 
   .navbar_list li {
