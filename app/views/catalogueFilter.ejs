@@ -46,6 +46,13 @@
         <a class="catalogue_button" href="/article/<%= coffee.id %>">
           <button>Découvrir</button>
         </a>
+
+        <div>
+          <button class="catalogue_price catalogue_button">
+            <%= coffee.price_kg %> €
+          </button>
+        </div>
+
         <a class="basket_link" href="/boutique/add/<%= coffee.id %>">
           <button class="basket_button">+</button>
         </a>
